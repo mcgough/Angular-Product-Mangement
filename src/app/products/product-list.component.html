@@ -1,0 +1,27 @@
+<div class="product-list">
+  <div class="heading">
+    <h2>{{ pageTitle }}</h2>
+  </div>
+  <div class="filter-input">
+    <label>
+      Filter By
+      <input [(ngModel)]="listFilter" type="text">
+      <button (click)="clearFilter()">Clear Filter</button>
+    </label>
+  </div>
+  <button (click)="toggleImage()">{{ showImage ? 'Hide' : 'Show' }} Images</button>
+  <div class="products" *ngIf="filteredProducts && filteredProducts.length">
+    <div *ngFor="let product of filteredProducts" class="product" [class.showImage]="showImage" data-id="{{ product.productId }}">
+      <div class="product-details">
+        <h3>{{ product.productName }}</h3>
+        <p>{{ product.price | currency: 'USD' : true }}</p>
+        <div class="star-rating"><span class="rating">Rating: {{ product.starRating }}</span></div>
+      </div>
+      <p>{{ product.description }}</p>
+      <img *ngIf="showImage" [src]="product.imageUrl" [alt]="product.productName" style="width: 20%;">
+    </div>
+  </div>
+  <div *ngIf="!filteredProducts.length">
+    No Products Found
+  </div>
+</div>
