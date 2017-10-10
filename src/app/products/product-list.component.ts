@@ -7,7 +7,7 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  constructor(private _productService: ProductService) {}
+  constructor(private productService: ProductService) {}
   pageTitle: string = 'Product List';
   showImage: boolean = true;
   listFilter: string = '';
@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
   errorMessage: string;
   ngOnInit(): void {
-    this._productService.getProducts()
+    this.productService.getProducts()
       .subscribe(
         products => this.products = products,
         error => this.errorMessage = <any>error
