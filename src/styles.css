@@ -6,3 +6,7 @@ li {
 div.panel-heading {
    font-size: x-large;
 }
+
+a {
+    color: #000 !important;
+}

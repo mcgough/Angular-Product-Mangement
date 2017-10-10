@@ -1,0 +1,11 @@
+.nav-container {
+  margin: 15px 0;
+}
+.nav-container ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  width: 60%;
+}

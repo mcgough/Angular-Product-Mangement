@@ -1,3 +1,6 @@
+.product-list {
+  margin: 0 0 25px;
+}
 .filter-input {
   margin: 25px 0 0;
 }
@@ -5,7 +8,7 @@ input {
   font-weight: normal;
 }
 button {
-  margin: 0 0 25px;
+  margin: 0 0 15px;
   font-weight: normal;
 }
 .products {
@@ -14,7 +17,10 @@ button {
   justify-content: space-between;
   width: 100%;
   max-width: 1035px;
-  margin: 15px auto;
+  margin: 15px auto 0;
+}
+.products a:hover {
+  text-decoration: none;
 }
 .product {
   width: 100%;
@@ -35,6 +41,7 @@ button {
 .product-details p {
   margin: 0 0 5px;
 }
+
 .product.showImage {
   max-width: 500px;
 }
