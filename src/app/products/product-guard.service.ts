@@ -3,13 +3,13 @@ import { CanActivate, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Injectable()
 export class ProductGuardService implements CanActivate {
-  constructor(private _router: Router) {}
+  constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     let id = +route.url[1].path;
     if (isNaN(id) || id < 0) {
       console.log('Invalid product ID');
-      this._router.navigate(['/products']);
+      this.router.navigate(['/products']);
       return false;
     }
     return true;

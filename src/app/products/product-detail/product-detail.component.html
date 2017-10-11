@@ -1,16 +1,21 @@
 <div class="product-detail">
   <div *ngIf="product" style="text-align: center;">
-    <page-title [pageTitle]="pageTitle"></page-title>
+    <page-title [pageTitle]="product.productName"></page-title>
     <div class="product-details-container">
+      <img [src]="product.imageUrl" (click)="handleImageClick(product.imageUrl, product.productName)" alt="product.productName">
       <div class="product-details">
-        <h2>{{ product.productName }}</h2>
         <div class="details">
-          <p>{{ product.price | currency: 'USD' : true }}
           <p>{{ product.description }}</p>
           <pm-star [rating]="product.rating"></pm-star>
+          <p>{{ product.price | currency: 'USD' : true }}</p>
+          <p>{{ product.releaseDate | date: 'fullDate' }}</p>
         </div>
       </div>
-      <img [src]="product.imageUrl" alt="product.productName">
+    </div>
+    <div class="button-container">
+      <a [routerLink]="['/products', previous.productId]"><button>Previous</button></a>
+      <a [routerLink]="['/products/' + next.productId]"><button>Next</button></a>
     </div>
   </div>
+  <image-modal *ngIf="modalUrl" [url]="modalUrl" [name]="modalName" (closeModal)="clearModalUrl()"></image-modal>
 </div>

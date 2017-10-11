@@ -11,36 +11,28 @@ export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
   showImage: boolean = true;
   listFilter: string = '';
-  modalUrl: string = '';
-  modalName: string = '';
   products: IProduct[] = [];
   errorMessage: string;
-  ngOnInit(): void {
-    this.productService.getProducts()
-      .subscribe(
-        products => this.products = products,
-        error => this.errorMessage = <any>error
-      );
-  };
-  toggleImage(): void {
-    this.showImage = !this.showImage;
-  };
-  clearFilter(): void {
-    this.listFilter = '';
-  };
-  handleImageClick(url: string, name: string): void {
-    this.modalUrl = url;
-    this.modalName = name;
-  };
-  clearModalUrl(): void {
-    this.modalUrl = '';
-    this.modalName = '';
-  };
   get filteredProducts(): IProduct[] {
     return this.products.filter((product: IProduct) => {
       if (product.productName.toLowerCase().indexOf(this.listFilter.toLowerCase()) > -1) {
         return product;
       }
     })
-  };
+  }
+  
+  ngOnInit(): void {
+    this.productService.getProducts()
+      .subscribe(
+        products => this.products = products,
+        error => this.errorMessage = <any>error
+      );
+  }
+  
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
+  clearFilter(): void {
+    this.listFilter = '';
+  }
 }

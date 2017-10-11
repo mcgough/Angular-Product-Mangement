@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100%;
   background: #000;
-  opacity: .7;
+  opacity: .9;
 }
 .modal-image-overlay {
   z-index: 1000;
@@ -24,6 +24,7 @@
 }
 .modal-image-title {
   background: #000;
+  text-align: center;
 }
 .modal-image-title h3 {
   color: #fff;
@@ -33,4 +34,6 @@
 }
 .modal-image-overlay img {
   width: 50vh;
+  display: block;
+  margin: auto;
 }

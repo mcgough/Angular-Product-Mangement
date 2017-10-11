@@ -1,5 +1,6 @@
 .nav-container {
-  margin: 15px 0;
+  padding: 25px 0;
+  background: rgba(249,157,28,0.9);
 }
 .nav-container ul {
   display: flex;
@@ -8,4 +9,7 @@
   padding: 0;
   margin: auto;
   width: 200px;
+}
+.nav-container a {
+  color: #fff !important;
 }
