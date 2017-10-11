@@ -19,13 +19,17 @@
   justify-content: center;
   cursor: pointer;
 }
+.modal-image-container {
+  width: 100vw;
+}
 .modal-image-title {
   background: #000;
 }
 .modal-image-title h3 {
   color: #fff;
-  font-size: 30px;
-  padding: 10px 0;
+  font-size: 5vh;
+  padding: 20px 0;
+  margin: 0 0 40px
 }
 .modal-image-overlay img {
   width: 50vh;

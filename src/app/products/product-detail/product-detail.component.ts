@@ -5,19 +5,18 @@ import { ProductService } from '../product.service';
 
 @Component({
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  pageTitle: string = 'Product Detail';
+  pageTitle: string = 'Product Details';
   product: IProduct;
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     let id = +this.route.snapshot.paramMap.get('id')
     this.productService.getProduct(id)
-      .subscribe((product) => {
-        console.log('callback', product);
+      .then((product: IProduct) => {
         this.product = product;
       });
   }

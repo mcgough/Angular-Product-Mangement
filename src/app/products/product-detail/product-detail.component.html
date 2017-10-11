@@ -1,5 +1,16 @@
 <div class="product-detail">
   <div *ngIf="product" style="text-align: center;">
-    <page-title [pageTitle]="product.productName"></page-title>
+    <page-title [pageTitle]="pageTitle"></page-title>
+    <div class="product-details-container">
+      <div class="product-details">
+        <h2>{{ product.productName }}</h2>
+        <div class="details">
+          <p>{{ product.price | currency: 'USD' : true }}
+          <p>{{ product.description }}</p>
+          <pm-star [rating]="product.rating"></pm-star>
+        </div>
+      </div>
+      <img [src]="product.imageUrl" alt="product.productName">
+    </div>
   </div>
 </div>

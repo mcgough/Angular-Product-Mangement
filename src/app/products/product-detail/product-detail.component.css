@@ -1,0 +1,14 @@
+.product-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.product-detail .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/find';
+import 'rxjs/add/operator/toPromise';
 
 import { IProduct } from './product';
 
@@ -15,10 +15,13 @@ export class ProductService {
     return this.http.get<IProduct[]>(this.productUrl)
       .catch(this.handleError);
   }
-  getProduct(id: number): Observable<IProduct> {
-    console.log('getProduct', id);
+  getProduct(id: number) {
     return this.http.get(this.productUrl)
-      .find(product => (product as IProduct).productId === id);
+      .toPromise()
+      .then((products: IProduct[]) => {
+        const [product]: IProduct[] = (products as IProduct[]).filter(product => product.productId === id);
+        return product;
+      });
   }
   private handleError(err: HttpErrorResponse) {
     return Observable.throw(err.message);

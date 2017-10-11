@@ -16,7 +16,7 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 1035px;
+  max-width: 875px;
   margin: 15px auto 0;
 }
 .products a:hover {
