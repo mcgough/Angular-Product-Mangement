@@ -1,0 +1,44 @@
+.homepage-container {
+  text-align: center; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 150px); 
+  color: rgb(249,157,28)  
+}
+
+.main-content {
+  display: flex;
+}
+
+h1 {
+  margin: 0; 
+  font-size: 13vw;
+  transform: skewX(-15deg);
+}
+h1::before {
+  content: '|';
+  font-size: 20vw;
+  margin-right: 10px;
+}
+h1::after {
+  content: '|';
+  font-size: 20vw;
+  margin-left: 10px;
+}
+
+.sub-content {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s;
+}
+.sub-content.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h3 {
+  font-size: 4vw;
+}
+
