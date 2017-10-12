@@ -4,7 +4,7 @@
     <label>
       Filter By
       <input [(ngModel)]="listFilter" type="text">
-      <button (click)="clearFilter()">Clear Filter</button>
+      <div class="clear-button" (click)="clearFilter()"><span>Clear Filter</span></div>
     </label>
   </div>
   <div class="products" *ngIf="filteredProducts && filteredProducts.length">

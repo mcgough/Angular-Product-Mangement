@@ -13,8 +13,8 @@
       </div>
     </div>
     <div class="button-container">
-      <a [routerLink]="['/products', previous.productId]"><button>Previous</button></a>
-      <a [routerLink]="['/products/' + next.productId]"><button>Next</button></a>
+      <a [routerLink]="['/products', previous.productId]"><div class="previous"><span>Previous</span></div></a>
+      <a [routerLink]="['/products/' + next.productId]"><div class="next">Next</div></a>
     </div>
   </div>
   <image-modal *ngIf="modalUrl" [url]="modalUrl" [name]="modalName" (closeModal)="clearModalUrl()"></image-modal>

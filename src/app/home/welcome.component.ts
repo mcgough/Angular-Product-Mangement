@@ -5,9 +5,9 @@ import { Component, AfterContentChecked } from '@angular/core';
     styleUrls: ['welcome.component.css'],
 })
 export class WelcomeComponent implements AfterContentChecked {
-    public mainTitle: string = 'Homepage';
-    public subTitle: string = 'Angular + TypeScript Demo';
-    public loaded: boolean = false;
+    mainTitle: string = 'Homepage';
+    subTitle: string = 'Angular + TypeScript Demo';
+    loaded: boolean = false;
 
     ngAfterContentChecked() {
         setTimeout(() => { this.loaded = true; }, 100);

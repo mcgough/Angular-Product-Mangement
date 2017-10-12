@@ -4,12 +4,31 @@
 .filter-input {
   margin: 25px 0 0;
 }
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(249,157,28);
+}
 input {
   font-weight: normal;
+  margin: 0 10px;
 }
-button {
-  margin: 0 0 15px;
-  font-weight: normal;
+.clear-button {
+  width: 90px;
+  height: 30px;
+  background: rgba(249,157,28,0.9);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all .3s;
+  cursor: pointer;
+  font-size: 13px;
+}
+.clear-button:hover {
+  background:rgba(249,157,28,0.75);  
 }
 .products {
   display: flex;
@@ -31,19 +50,14 @@ button {
   margin: 0 5px 25px;
   border: 1px solid #000;
   padding: 15px 15px;
-  border-radius: 0;
+  border-radius: 5px;
+  transition: all .175s ease-in-out;
+}
+.product:hover {
   color: #fff !important;
   border-radius: 15px;
   border-color: rgba(249,157,28,0.9);
   background: rgba(249,157,28,0.9);
-  transition: all .175s ease-in-out;
-}
-.product:hover {
-  border-color: #000;
-  border-radius: 5px;
-  background: #fff;
-  color: #000 !important;
-  border-color: 
 }
 .product img {
   cursor: pointer;

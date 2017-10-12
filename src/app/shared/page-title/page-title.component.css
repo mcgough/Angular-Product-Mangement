@@ -1,0 +1,31 @@
+.heading { 
+  margin: 50px 0 50px;
+  transform: skewX(-15deg);
+  color: rgb(249,157,28)
+}
+h2 { 
+  font-size: 3vw;
+  margin: 0;
+}
+h2::before {
+  content: '|';
+  font-size: 4vw;
+  margin-right: 10px;
+}
+h2::after {
+  content: '|';
+  font-size: 4vw;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 604px) {
+  h2 {
+    font-size: 10vw;
+  }
+  h2::before {
+    font-size: 13vw;
+  }
+  h2::after {
+    font-size: 13vw;
+  }
+}

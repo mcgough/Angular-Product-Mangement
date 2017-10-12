@@ -29,6 +29,31 @@ img {
 
 .button-container {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  margin: auto;
+}
+
+.previous, .next {
+  width: 75px;
+  height: 35px;
+  background: rgba(249,157,28,0.9);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all .3s;
+}
+.previous:hover, .next:hover {
+  background:rgba(249,157,28,0.75)
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 604px) {

@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
         <h2>{{ pageTitle }}</h2>
       </div>
     `,
-  styles: ['.heading { margin: 25px 0; }', 'h2 { margin: 0; }'],
+  styleUrls: ['page-title.component.css'],
 })
 export class PageTitleComponent {
   @Input() pageTitle: string;
