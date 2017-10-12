@@ -32,12 +32,13 @@ button {
   border: 1px solid #000;
   padding: 15px 15px;
   border-radius: 0;
-  transition: all .3s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 .product:hover {
   border-radius: 15px;
   background: rgba(249,157,28,0.75);
-  border-color: rgba(249,157,28,0.75)
+  border-color: rgba(249,157,28,0.75);
+  color: #fff !important;
 }
 .product img {
   cursor: pointer;
