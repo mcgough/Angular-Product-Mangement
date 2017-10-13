@@ -7,6 +7,8 @@ export interface IProduct {
   description: string;
   starRating: number;
   imageUrl: string;
+  quantity: number;
+  category: string;
 }
 
 export interface IGetProduct {

@@ -7,6 +7,8 @@
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
+        "quantity": 5,
+        "category": "New",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
@@ -17,6 +19,8 @@
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
+        "quantity": 2,
+        "category": "New",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -27,6 +31,8 @@
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
+        "quantity": 8,
+        "category": "New",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
@@ -37,6 +43,8 @@
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
+        "quantity": 0,
+        "category": "New",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {
@@ -47,6 +55,8 @@
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
+        "quantity": 0,
+        "category": "New",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     },
     {
@@ -57,6 +67,8 @@
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
+        "quantity": 5,
+        "category": "Old",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
@@ -67,6 +79,8 @@
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
+        "quantity": 1,
+        "category": "Old",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -77,6 +91,8 @@
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
+        "quantity": 3,
+        "category": "Old",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
@@ -87,6 +103,8 @@
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
+        "quantity": 13,
+        "category": "Old",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {
@@ -97,6 +115,8 @@
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
+        "quantity": 0,
+        "category": "Old",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     },
     {
@@ -107,6 +127,8 @@
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
+        "quantity": 3,
+        "category": "Oldest",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
@@ -117,6 +139,8 @@
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
+        "quantity": 1,
+        "category": "Oldest",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -127,6 +151,8 @@
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
+        "quantity": 1,
+        "category": "Oldest",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
@@ -137,6 +163,8 @@
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
+        "quantity": 1,
+        "category": "Oldest",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {
@@ -147,6 +175,8 @@
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
+        "quantity": 4,
+        "category": "Oldest",
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
 ]

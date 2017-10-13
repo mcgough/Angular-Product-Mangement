@@ -8,7 +8,8 @@ import { store, filterProducts } from '../../store';
 })
 export class ProductListComponent implements OnInit {
   constructor() {}
-  pageTitle: string = 'Product List';
+  
+  pageTitle: string = 'Products';
   showImage: boolean = true;
   searchTerm: string = '';
   products: IProduct[];

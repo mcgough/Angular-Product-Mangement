@@ -9,7 +9,7 @@ import { ProductService } from 'app/products/product.service';
       <div class="nav-container">
         <ul>
           <li><a [routerLink]="['/']">Home</a></li>
-          <li><a [routerLink]="['/products']">Product List</a></li>
+          <li><a [routerLink]="['/products']">Products</a></li>
         </ul>
       </div>
     </nav>
