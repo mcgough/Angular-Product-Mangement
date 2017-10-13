@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { ProductService } from '../product.service';
+import { store, setSelectedProduct } from '../../store';
 import 'rxjs/add/operator/filter';
 
 import { IProduct, IGetProduct } from '../product';
@@ -12,12 +12,13 @@ import { IProduct, IGetProduct } from '../product';
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Details';
   product: IProduct;
+  quantity: number;
   next: IProduct;
   previous: IProduct;
   modalUrl: string = '';
   modalName: string = '';
   
-  constructor (private router: Router, private route: ActivatedRoute, private productService: ProductService) {
+  constructor (private router: Router, private route: ActivatedRoute) {
     router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe(event => this.getProduct());
@@ -29,13 +30,22 @@ export class ProductDetailComponent implements OnInit {
 
   getProduct(): void {
     const id: number = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProduct(id)
-      .then((response: IGetProduct) => {
-        const { product, next, previous } = response;
-        this.product = product;
-        this.next = next;
-        this.previous = previous;
-      });    
+    store.dispatch(setSelectedProduct(id));
+    const allState = store.getState();
+    this.product = allState.selectedProduct;
+    this.next = allState.next;
+    this.previous = allState.previous;
+    this.quantity = 1;  
+  }
+  handleAddQuantityClick(): void {
+    if (this.quantity < this.product.quantity) {
+      this.quantity++;
+    }
+  }
+  handleMinusQuantityClick(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
   }
   handleImageClick(url: string, name: string): void {
     this.modalUrl = url;

@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './home/page-not-found/page-not-found.comp
 
 import { ProductModule } from './products/product.module';
 import { AppRoutingModule } from './routing/app-routing.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   imports: [ 

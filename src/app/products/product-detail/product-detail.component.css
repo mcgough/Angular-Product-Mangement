@@ -27,6 +27,17 @@ img {
   align-items: center;
 }
 
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.quantity-container input {
+  text-align: center;
+  margin: 0 10px;
+}
+
 .button-container {
   margin-bottom: 50px;
   display: flex;

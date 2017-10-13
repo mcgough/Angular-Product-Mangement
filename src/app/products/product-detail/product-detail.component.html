@@ -8,7 +8,17 @@
           <p>{{ product.description }}</p>
           <pm-star [rating]="product.rating"></pm-star>
           <p>{{ product.price | currency: 'USD' : true }}</p>
-          <p>{{ product.releaseDate | date: 'fullDate' }}</p>
+        </div>
+        <div class="add-to-cart-container" *ngIf="product.quantity">
+          <div class="quantity-container">
+            <div (click)="handleAddQuantityClick()"><span>+</span></div>
+            <input type="number" min="1" [max]="product.quantity" [(ngModel)]="quantity">
+            <div (click)="handleMinusQuantityClick()"><span>-</span></div>
+          </div>
+          <div class="add-to-cart">Add to Cart</div>
+        </div>
+        <div *ngIf="!product.quantity">
+          <p style="color: red;">Out of Stock</p>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { store, filterProducts } from '../../store';
 })
 export class ProductListComponent implements OnInit {
   constructor() {}
-  
+
   pageTitle: string = 'Products';
   showImage: boolean = true;
   searchTerm: string = '';
@@ -31,7 +31,6 @@ export class ProductListComponent implements OnInit {
     this.products = allState.products;
     this.filteredProducts = allState.filteredProducts;
   }
-  
   clearFilter(): void {
     this.searchTerm = '';
     this.filterChanged();

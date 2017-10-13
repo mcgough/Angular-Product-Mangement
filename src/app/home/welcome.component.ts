@@ -6,7 +6,7 @@ import { Component, AfterContentChecked } from '@angular/core';
 })
 export class WelcomeComponent implements AfterContentChecked {
     mainTitle: string = 'Homepage';
-    subTitle: string = 'Angular + TypeScript Demo';
+    subTitle: string = 'Angular + TypeScript + Redux';
     loaded: boolean = false;
 
     ngAfterContentChecked() {
