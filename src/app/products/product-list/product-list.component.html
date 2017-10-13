@@ -3,7 +3,7 @@
   <div class="filter-input">
     <label>
       Filter By
-      <input [(ngModel)]="listFilter" type="text">
+      <input [(ngModel)]="searchTerm" (keyup)="filterChanged()" type="text">
       <div class="clear-button" (click)="clearFilter()"><span>Clear Filter</span></div>
     </label>
   </div>

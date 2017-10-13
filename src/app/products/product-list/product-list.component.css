@@ -2,9 +2,10 @@
   margin: 0 0 25px;
 }
 .filter-input {
-  margin: 25px 0 0;
+  margin: 25px 0 40px;
 }
 label {
+  font-weight: normal;
   display: flex;
   align-items: center;
   justify-content: center;
