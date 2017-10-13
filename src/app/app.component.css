@@ -8,8 +8,15 @@
   list-style-type: none;
   padding: 0;
   margin: auto;
-  width: 200px;
+  width: 280px;
 }
+
+.nav-container li {
+  font-size: x-large;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
 .nav-container a {
-  color: #fff !important;
+  color: #004f5a !important;
 }

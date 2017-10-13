@@ -6,6 +6,7 @@
 h2 { 
   font-size: 3vw;
   margin: 0;
+  font-weight: 800;
 }
 h2::before {
   content: '|';

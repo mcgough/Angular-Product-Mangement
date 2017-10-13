@@ -15,7 +15,7 @@
             <input type="number" min="1" [max]="product.quantity" [(ngModel)]="quantity">
             <div (click)="handleMinusQuantityClick()"><span>-</span></div>
           </div>
-          <div class="add-to-cart">Add to Cart</div>
+          <div class="add-to-cart" (click)="handleAddToCart()">Add to Cart</div>
         </div>
         <div *ngIf="!product.quantity">
           <p style="color: red;">Out of Stock</p>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { store, setSelectedProduct } from '../../store';
+import { store, setSelectedProduct, addProductToCart } from '../../store';
 import 'rxjs/add/operator/filter';
 
 import { IProduct, IGetProduct } from '../product';
@@ -36,6 +36,13 @@ export class ProductDetailComponent implements OnInit {
     this.next = allState.next;
     this.previous = allState.previous;
     this.quantity = 1;  
+  }
+  handleAddToCart(): void {
+    const product = Object.assign({}, this.product, {
+      quantity: this.quantity,
+    });
+    this.quantity = 1;
+    store.dispatch(addProductToCart(product));
   }
   handleAddQuantityClick(): void {
     if (this.quantity < this.product.quantity) {

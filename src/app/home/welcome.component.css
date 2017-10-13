@@ -14,8 +14,9 @@
 
 h1 {
   margin: 0; 
-  font-size: 13vw;
+  font-size: 12vw;
   transform: skewX(-15deg);
+  font-weight: 800;
 }
 h1::before {
   content: '|';

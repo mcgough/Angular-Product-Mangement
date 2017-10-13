@@ -5,7 +5,7 @@ import { Component, AfterContentChecked } from '@angular/core';
     styleUrls: ['welcome.component.css'],
 })
 export class WelcomeComponent implements AfterContentChecked {
-    mainTitle: string = 'Homepage';
+    mainTitle: string = 'E-COMM';
     subTitle: string = 'Angular + TypeScript + Redux';
     loaded: boolean = false;
 

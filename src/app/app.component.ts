@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'app/products/product.service';
 
 @Component({
   selector: 'pm-root',
@@ -11,6 +10,7 @@ import { ProductService } from 'app/products/product.service';
           <li><a [routerLink]="['/']">Home</a></li>
           <li><a [routerLink]="['/products']">Products</a></li>
         </ul>
+        <pm-cart-modal></pm-cart-modal>
       </div>
     </nav>
     <div>
@@ -18,7 +18,7 @@ import { ProductService } from 'app/products/product.service';
     </div>
   `,
   styleUrls: [ './app.component.css' ],
-  providers: [ ProductService ],
+  providers: [],
 })
 export class AppComponent {
   public pageTitle: string = 'Product Management';

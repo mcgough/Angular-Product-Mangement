@@ -7,4 +7,5 @@ export interface IAppState {
   next: IProduct;
   previous: IProduct;
   cart: IProduct[];
+  cartModalFlag: boolean;
 }

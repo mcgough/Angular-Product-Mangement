@@ -1,6 +1,10 @@
 import { IProduct } from '../products/product';
 import { IAppState } from './IAppState';
-import { FILTER_PRODUCTS, SET_SELECTED_PRODUCT } from './actions';
+import {
+  FILTER_PRODUCTS,
+  SET_SELECTED_PRODUCT,
+  ADD_PRODUCT_TO_CART,
+} from './actions';
 
 import { find } from 'lodash';
 
@@ -50,6 +54,7 @@ const initialState: IAppState = {
   next: null,
   previous: null,
   cart: [],
+  cartModalFlag: false,
 };
 
 function filterProducts(state, action) : IAppState {
@@ -67,12 +72,27 @@ function setSelectedProduct(state, action) : IAppState {
   });
 }
 
+function addProductToState(state, action) : IAppState {
+  const cart = state.cart.slice();
+  cart.push(action.product);
+  return Object.assign({}, state, {
+    cart: cart,
+    cartModalFlag: true,
+  })
+}
+
+function setNewQuantity(state, action) : IAppState {
+  return state;
+}
+
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
     case FILTER_PRODUCTS:
       return filterProducts(state, action);
     case SET_SELECTED_PRODUCT:
       return setSelectedProduct(state, action);
+    case ADD_PRODUCT_TO_CART:
+      return addProductToState(state, action);
     default:
       return state;
   } 
