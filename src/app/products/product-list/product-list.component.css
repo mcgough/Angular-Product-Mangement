@@ -19,7 +19,6 @@ input {
   width: 90px;
   height: 30px;
   background: rgba(249,157,28,0.9);
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +26,8 @@ input {
   transition: all .3s;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .75px;
 }
 .clear-button:hover {
   background:rgba(249,157,28,0.75);  
@@ -50,15 +51,18 @@ input {
   justify-content: space-between;
   margin: 0 5px 25px;
   border: 1px solid #000;
-  padding: 15px 15px;
+  padding: 19px 19px;
   border-radius: 5px;
   transition: all .175s ease-in-out;
 }
 .product:hover {
-  color: #fff !important;
+  border-width: 5px;
   border-radius: 15px;
+  padding: 15px 15px;
   border-color: rgba(249,157,28,0.9);
-  background: rgba(249,157,28,0.9);
+}
+.product:hover .star-rating {
+  color: #fff !important;
 }
 .product img {
   cursor: pointer;

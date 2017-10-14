@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from './products/product.service';
 
 @Component({
   selector: 'pm-root',
@@ -20,6 +21,11 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ],
   providers: [],
 })
-export class AppComponent {
-  public pageTitle: string = 'Product Management';
+export class AppComponent implements OnInit {
+  constructor(private productService: ProductService) {}
+  ngOnInit(): void {
+    console.log('appComonent init');
+    this.productService.getProducts();
+  }
+
 }

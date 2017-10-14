@@ -1,9 +1,19 @@
+import { IProduct } from '../products/product';
+
+export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
 export const SET_SELECTED_PRODUCT = 'SET_SELECTED_PRODUCT';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const SET_CART_MODAL_FLAG = 'SET_CART_MODAL_FLAG';
 
-export function filterProducts(searchText:string) {
+export const setProducts = (products: IProduct[]) => {
+  return { 
+    type: SET_PRODUCTS,
+    products,
+  };
+}
+
+export const filterProducts = (searchText:string) => {
   return {
     type: FILTER_PRODUCTS,
     searchText,

@@ -46,7 +46,7 @@ export class CartModalComponent implements OnInit {
     this.isOpen = allState.cartModalFlag;
   }
   openModal(): void {
-    store.dispatch(setCartModalFlag(true));
+    this.isOpen ? store.dispatch(setCartModalFlag(false)) : store.dispatch(setCartModalFlag(true));
   }
   closeModal(): void {
     store.dispatch(setCartModalFlag(false));

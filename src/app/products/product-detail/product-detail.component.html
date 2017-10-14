@@ -9,7 +9,7 @@
       <div class="product-details">
         <div class="details">
           <p>{{ product.description }}</p>
-          <pm-star [rating]="product.rating"></pm-star>
+          <pm-star [rating]="product.starRating"></pm-star>
           <p>{{ product.price | currency: 'USD' : true }}</p>
           <p class="inventory" *ngIf="product.quantity">In Stock:&nbsp;<span>{{ product.quantity }}</span></p>
         </div>

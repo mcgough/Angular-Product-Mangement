@@ -1,63 +1,33 @@
 import { IProduct } from '../products/product';
 import { IAppState } from './IAppState';
 import {
+  SET_PRODUCTS,
   FILTER_PRODUCTS,
   SET_SELECTED_PRODUCT,
   ADD_PRODUCT_TO_CART,
   SET_CART_MODAL_FLAG,
 } from './actions';
 
-
-import { find } from 'lodash';
-
-const products = [
-  {
-    "productId": 1,
-    "productName": "New Leaf Rake",
-    "productCode": "GDN-0011",
-    "releaseDate": "March 19, 2016",
-    "description": "Leaf rake with 48-inch wooden handle.",
-    "price": 19.95,
-    "starRating": 3.2,
-    "quantity": 3,
-    "category": "New",
-    "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-  },
-  {
-    "productId": 2,
-    "productName": "New Garden Cart",
-    "productCode": "GDN-0023",
-    "releaseDate": "March 18, 2016",
-    "description": "15 gallon capacity rolling garden cart",
-    "price": 32.99,
-    "starRating": 4.2,
-    "quantity": 5,
-    "category": "New",
-    "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-  },
-  {
-    "productId": 5,
-    "productName": "New Hammer",
-    "productCode": "TBX-0048",
-    "releaseDate": "May 21, 2016",
-    "description": "Curved claw steel hammer",
-    "price": 8.9,
-    "starRating": 4.8,
-    "quantity": 0,
-    "category": "New",
-    "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-  },
-];
-
 const initialState: IAppState = {
-  products,
-  filteredProducts: products,
-  selectedProduct: null,
+  products: [],
+  filteredProducts: [],
+  product: null,
   next: null,
   previous: null,
   cart: [],
   cartModalFlag: false,
 };
+
+function setProducts(state, action) : IAppState {
+  const storedState = JSON.parse(localStorage.getItem('state'));
+  const { products } = action;
+  let newState = assign(state, { products, filteredProducts: products});
+  // if (Object.prototype.hasOwnProperty.call(storedState, 'products')) {
+  //   newState = storedState;
+  // }
+  setLocalStorage(JSON.stringify(newState));
+  return newState;
+}
 
 function filterProducts(state, action) : IAppState {
   return Object.assign({}, state, {
@@ -68,23 +38,24 @@ function filterProducts(state, action) : IAppState {
 function setSelectedProduct(state, action) : IAppState {
   const { product, next, previous } = getSelectedPayload(state.products, action.id);
   return Object.assign({}, state, {
-    selectedProduct: product,
+    product,
     next,
     previous,
   });
 }
 
-function addProductToState(state, action) : IAppState {
+function addProductToCart(state, action) : IAppState {
   const cart = state.cart.slice();
+  const products = state.products.slice();
   cart.push(action.product);
   return Object.assign({}, state, {
-    cart: cart,
+    cart,
     cartModalFlag: true,
+    products: setNewProductQuantity(products, action.product),
   })
 }
 
 function setCartModalFlag(state, action) : IAppState {
-  console.log(action);
   return Object.assign({}, state, {
     cartModalFlag: action.flag,
   })
@@ -96,18 +67,31 @@ function setNewQuantity(state, action) : IAppState {
 
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
+    case SET_PRODUCTS:
+      return setProducts(state, action);
     case FILTER_PRODUCTS:
       return filterProducts(state, action);
     case SET_SELECTED_PRODUCT:
       return setSelectedProduct(state, action);
     case ADD_PRODUCT_TO_CART:
-      return addProductToState(state, action);
+      return addProductToCart(state, action);
     case SET_CART_MODAL_FLAG:
       return setCartModalFlag(state, action);
     default:
       return state;
   } 
 };
+
+const setNewProductQuantity = (collection: IProduct[], product: IProduct) => {
+  const { productId: id, quantity } = product;
+  const payload = collection.map((item) => {
+    if (item.productId === id) {
+      item.quantity -= quantity;
+    }
+    return item;
+  });
+  return payload;
+}
 
 function getSelectedPayload(products, id: number) {
   const payload = products.reduce((payload: any, product: IProduct, index: number) => {
@@ -126,4 +110,12 @@ function getSelectedPayload(products, id: number) {
     return payload;
   }, {})
   return payload;
+}
+
+function setLocalStorage(state) {
+  localStorage.setItem('state', state);
+}
+
+function assign(state, props) {
+  return Object.assign({}, state, props);
 }

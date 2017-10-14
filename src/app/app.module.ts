@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './home/page-not-found/page-not-found.comp
 import { ProductModule } from './products/product.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { ProductService } from './products/product.service';
 
 @NgModule({
   imports: [ 
@@ -23,7 +24,7 @@ import { SharedModule } from './shared/shared.module';
     WelcomeComponent,
     PageNotFoundComponent,
   ],
-  providers: [],
+  providers: [ ProductService ],
   bootstrap: [ AppComponent ],
 })
 export class AppModule { }

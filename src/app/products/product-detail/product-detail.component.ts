@@ -31,10 +31,10 @@ export class ProductDetailComponent implements OnInit {
   getProduct(): void {
     const id: number = +this.route.snapshot.paramMap.get('id');
     store.dispatch(setSelectedProduct(id));
-    const allState = store.getState();
-    this.product = allState.selectedProduct;
-    this.next = allState.next;
-    this.previous = allState.previous;
+    const appState = store.getState();
+    this.product = appState.product;
+    this.next = appState.next;
+    this.previous = appState.previous;
     this.quantity = 1;  
   }
   handleAddToCart(): void {
