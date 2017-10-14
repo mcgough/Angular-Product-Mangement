@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../products/product';
 import { store, setCartModalFlag } from '../../store';
+import { Router, NavigationEnd } from '@angular/router';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'pm-cart-modal',
@@ -9,7 +11,11 @@ import { store, setCartModalFlag } from '../../store';
 })
 export class CartModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe(event => this.closeModal());
+  }
 
   products: IProduct[];
   isOpen: boolean;
