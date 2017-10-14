@@ -2,12 +2,16 @@
   <div *ngIf="product" style="text-align: center;">
     <page-title [pageTitle]="product.productName"></page-title>
     <div class="product-details-container">
-      <img [src]="product.imageUrl" (click)="handleImageClick(product.imageUrl, product.productName)" alt="product.productName">
+      <div class="product-image-container">
+        <img [src]="product.imageUrl" (click)="handleImageClick(product.imageUrl, product.productName)" alt="product.productName">
+        <p *ngIf="product.quantity < 1" class="product-image-out-of-stock">Out of Stock</p>
+      </div>
       <div class="product-details">
         <div class="details">
           <p>{{ product.description }}</p>
           <pm-star [rating]="product.rating"></pm-star>
           <p>{{ product.price | currency: 'USD' : true }}</p>
+          <p class="inventory" *ngIf="product.quantity">In Stock:&nbsp;<span>{{ product.quantity }}</span></p>
         </div>
         <div class="add-to-cart-container" *ngIf="product.quantity">
           <div class="quantity-container">
@@ -18,7 +22,7 @@
           <div class="add-to-cart" (click)="handleAddToCart()">Add to Cart</div>
         </div>
         <div *ngIf="!product.quantity">
-          <p style="color: red;">Out of Stock</p>
+          <p style="color: red; font-weight: 800;">Out of Stock</p>
         </div>
       </div>
     </div>

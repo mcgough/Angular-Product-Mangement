@@ -2,7 +2,7 @@
   <div class="nav-cart">
     <ul>
       <li (click)="openModal()">Cart</li>
-      <li>({{ products ? productsCount : 0 }})</li>
+      <li>({{ productsCount }})</li>
     </ul>
   </div>
 </div>
@@ -15,7 +15,7 @@
       <h3 class="line-item">{{ product.productName }}&nbsp;<span>({{ product.quantity }})</span>&nbsp;-&nbsp;<span>{{ product.price | currency: 'USD' : true }}</span></h3>
     </div>
     <h3 *ngIf="priceTotal > 0" class="price-total">{{ priceTotal | currency: 'USD' : true }}</h3>
-    <div *ngIf="products && !products.length" class="empty-cart">
+    <div *ngIf="!products || !products.length" class="empty-cart">
       <h3>Empty Cart</h3>
     </div>
   </div>

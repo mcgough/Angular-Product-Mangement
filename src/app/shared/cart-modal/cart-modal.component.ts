@@ -14,22 +14,29 @@ export class CartModalComponent implements OnInit {
   products: IProduct[];
   isOpen: boolean;
   get productsCount(): number {
-    const count = this.products.reduce((total, product) => {
-      total += product.quantity;
-      return total;
-    }, 0);
-    return count;
+    if (this.products) {
+      const count = this.products.reduce((total, product) => {
+        total += product.quantity;
+        return total;
+      }, 0);
+      return count;
+    }
+    return 0;
   }
   get priceTotal(): number {
-    const total = this.products.reduce((total, product) => {
-      total += (product.price * product.quantity);
+    if (this.products) {
+      const total = this.products.reduce((total, product) => {
+        total += (product.price * product.quantity);
+        return total;
+      }, 0);
       return total;
-    }, 0);
-    return total;
+    }
+    return 0;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     store.subscribe(() => {
+      console.log('cart subscribe');
       this.updateCartState()
     });
   }
@@ -41,7 +48,7 @@ export class CartModalComponent implements OnInit {
     this.openModal();
   }
   openModal(): void {
-    this.isOpen = true;
+    this.isOpen = true;;
   }
   closeModal(): void {
     this.isOpen = false;

@@ -6,6 +6,7 @@ import {
   ADD_PRODUCT_TO_CART,
 } from './actions';
 
+
 import { find } from 'lodash';
 
 const products = [
