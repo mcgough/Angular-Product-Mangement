@@ -9,10 +9,17 @@ export interface IProduct {
   imageUrl: string;
   quantity: number;
   category: string;
+  reviews: IReview[];
 }
 
 export interface IGetProduct {
   product: IProduct;
   previous: IProduct;
   next: IProduct;
+}
+
+export interface IReview {
+  date: Date;
+  rating: number;
+  body: string;
 }
