@@ -25,16 +25,25 @@ export class ProductDetailComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.getProduct();
+    const { products } = store.getState();
+    
+    //TODO: refactor
+    if (!products.length) {
+      setTimeout(() => {
+        this.getProduct();
+      }, 1000);
+    } else {
+      this.getProduct();
+    }
   }
 
   getProduct(): void {
     const id: number = +this.route.snapshot.paramMap.get('id');
     store.dispatch(setSelectedProduct(id));
-    const appState = store.getState();
-    this.product = appState.product;
-    this.next = appState.next;
-    this.previous = appState.previous;
+    const { product, next, previous } = store.getState();
+    this.product = product;
+    this.next = next;
+    this.previous = previous;
     this.quantity = 1;  
   }
   handleAddToCart(): void {
