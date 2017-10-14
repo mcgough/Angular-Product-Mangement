@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../products/product';
-import { store } from '../../store';
+import { store, setCartModalFlag } from '../../store';
 
 @Component({
   selector: 'pm-cart-modal',
@@ -36,7 +36,6 @@ export class CartModalComponent implements OnInit {
 
   ngOnInit(): void {
     store.subscribe(() => {
-      console.log('cart subscribe');
       this.updateCartState()
     });
   }
@@ -45,12 +44,11 @@ export class CartModalComponent implements OnInit {
     const allState = store.getState();
     this.products = allState.cart;
     this.isOpen = allState.cartModalFlag;
-    this.openModal();
   }
   openModal(): void {
-    this.isOpen = true;;
+    store.dispatch(setCartModalFlag(true));
   }
   closeModal(): void {
-    this.isOpen = false;
+    store.dispatch(setCartModalFlag(false));
   }
 }

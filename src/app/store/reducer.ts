@@ -4,6 +4,7 @@ import {
   FILTER_PRODUCTS,
   SET_SELECTED_PRODUCT,
   ADD_PRODUCT_TO_CART,
+  SET_CART_MODAL_FLAG,
 } from './actions';
 
 
@@ -82,6 +83,13 @@ function addProductToState(state, action) : IAppState {
   })
 }
 
+function setCartModalFlag(state, action) : IAppState {
+  console.log(action);
+  return Object.assign({}, state, {
+    cartModalFlag: action.flag,
+  })
+}
+
 function setNewQuantity(state, action) : IAppState {
   return state;
 }
@@ -94,6 +102,8 @@ export const reducer = (state = initialState, action) => {
       return setSelectedProduct(state, action);
     case ADD_PRODUCT_TO_CART:
       return addProductToState(state, action);
+    case SET_CART_MODAL_FLAG:
+      return setCartModalFlag(state, action);
     default:
       return state;
   } 
