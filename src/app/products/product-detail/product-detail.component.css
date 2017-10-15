@@ -53,6 +53,18 @@ img {
   letter-spacing: .75px;
 }
 
+.product-detail .incrementer {
+  cursor: pointer;
+  border: 1px solid rgba(249,157,28,0.9);
+  color: white;
+  background: rgba(249,157,28,0.9);
+  width: 25px;
+  transition: all .3s;
+}
+.product-detail .incrementer:hover {
+  background: rgba(249,157,28,0.75)
+}
+
 .quantity-container {
   display: flex;
   align-items: center;

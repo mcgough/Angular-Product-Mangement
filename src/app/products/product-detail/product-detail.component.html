@@ -10,14 +10,15 @@
         <div class="details">
           <p>{{ product.description }}</p>
           <pm-star [rating]="product.starRating"></pm-star>
+          <p class="reviews">Reviews ({{ product.reviews.length }})</p>
           <p>{{ product.price | currency: 'USD' : true }}</p>
           <p class="inventory" *ngIf="product.quantity">In Stock:&nbsp;<span>{{ product.quantity }}</span></p>
         </div>
         <div class="add-to-cart-container" *ngIf="product.quantity">
           <div class="quantity-container">
-            <div (click)="handleAddQuantityClick()"><span>+</span></div>
+            <div (click)="handleAddQuantityClick()" class="incrementer plus"><span>+</span></div>
             <input type="number" min="1" [max]="product.quantity" [(ngModel)]="quantity">
-            <div (click)="handleMinusQuantityClick()"><span>-</span></div>
+            <div (click)="handleMinusQuantityClick()" class="incrementer minus"><span>-</span></div>
           </div>
           <div class="add-to-cart" (click)="handleAddToCart()">Add to Cart</div>
         </div>

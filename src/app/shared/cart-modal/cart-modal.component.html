@@ -12,7 +12,13 @@
   </div>
   <div class="cart-modal-content">
     <div *ngFor="let product of products">
-      <h3 class="line-item">{{ product.productName }}&nbsp;<span>({{ product.quantity }})</span>&nbsp;-&nbsp;<span>{{ product.price | currency: 'USD' : true }}</span></h3>
+      <h3 class="line-item">
+        {{ product.productName }}
+        &nbsp;<span>({{ product.quantity }})</span>
+        &nbsp;-&nbsp;
+        <span>{{ product.price | currency: 'USD' : true }}</span>
+        &nbsp;<span class="remove" (click)="removeProduct(product)">X</span>
+      </h3>
     </div>
     <h3 *ngIf="priceTotal > 0" class="price-total">{{ priceTotal | currency: 'USD' : true }}</h3>
     <div *ngIf="!products || !products.length" class="empty-cart">

@@ -56,8 +56,12 @@ li:first-of-type {
 .cart-modal h3 {
   margin: 5px 0 5px;
 }
+.cart-modal .remove {
+  cursor: pointer;
+  color: red;
+}
 .cart-modal .line-item {
-  font-size: 13px;
+  font-size: .75em;
 }
 .cart-modal .price-total {
   border-top: 1px solid;

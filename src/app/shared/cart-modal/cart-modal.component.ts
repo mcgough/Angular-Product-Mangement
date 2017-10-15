@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../products/product';
-import { store, setCartModalFlag } from '../../store';
+import { store, setCartModalFlag, removeProductFromCart } from '../../store';
 import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -50,6 +50,9 @@ export class CartModalComponent implements OnInit {
     const allState = store.getState();
     this.products = allState.cart;
     this.isOpen = allState.cartModalFlag;
+  }
+  removeProduct(product: IProduct): void {
+    store.dispatch(removeProductFromCart(product));
   }
   openModal(): void {
     this.isOpen ? store.dispatch(setCartModalFlag(false)) : store.dispatch(setCartModalFlag(true));

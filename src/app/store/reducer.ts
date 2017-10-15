@@ -5,6 +5,7 @@ import {
   FILTER_PRODUCTS,
   SET_SELECTED_PRODUCT,
   ADD_PRODUCT_TO_CART,
+  REMOVE_PRODUCT_FROM_CART,
   SET_CART_MODAL_FLAG,
 } from './actions';
 
@@ -47,11 +48,23 @@ function setSelectedProduct(state, action) : IAppState {
 function addProductToCart(state, action) : IAppState {
   const cart = state.cart.slice();
   const products = state.products.slice();
-  cart.push(action.product);
+  cart.unshift(action.product);
   return Object.assign({}, state, {
     cart,
     cartModalFlag: true,
     products: setNewProductQuantity(products, action.product),
+  })
+}
+
+function removeProductFromCart(state, action) : IAppState {
+  const { product: removedProduct } = action;
+  const { quantity } = removedProduct;
+  const cart = state.cart.slice();
+  const products = state.products.slice();
+  removedProduct.quantity = quantity * -1;
+  return Object.assign({}, state, {
+    cart: cart.filter(product => product.productId !== removedProduct.productId),
+    products: setNewProductQuantity(products, removedProduct),
   })
 }
 
@@ -75,6 +88,8 @@ export const reducer = (state = initialState, action) => {
       return setSelectedProduct(state, action);
     case ADD_PRODUCT_TO_CART:
       return addProductToCart(state, action);
+    case REMOVE_PRODUCT_FROM_CART:
+      return removeProductFromCart(state, action);
     case SET_CART_MODAL_FLAG:
       return setCartModalFlag(state, action);
     default:
