@@ -94,14 +94,14 @@ img {
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
-  width: 160px;
+  width: 170px;
   margin: auto;
 }
 
 .previous, .next {
   font-weight: 800;
   letter-spacing: .75px;
-  width: 75px;
+  width: 80px;
   height: 35px;
   background: rgba(249,157,28,0.9);
   display: flex;

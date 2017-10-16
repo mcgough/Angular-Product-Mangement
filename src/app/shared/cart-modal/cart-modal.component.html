@@ -13,7 +13,7 @@
   <div class="cart-modal-content">
     <div *ngFor="let product of products">
       <h3 class="line-item">
-        {{ product.productName }}
+        <a [routerLink]="['/products', product.productId]" class="product-link">{{ product.productName }}</a>
         &nbsp;<span>({{ product.quantity }})</span>
         &nbsp;-&nbsp;
         <span>{{ product.price | currency: 'USD' : true }}</span>

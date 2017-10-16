@@ -24,7 +24,6 @@ import { ProductService } from './products/product.service';
 export class AppComponent implements OnInit {
   constructor(private productService: ProductService) {}
   ngOnInit(): void {
-    console.log('appComonent init');
     this.productService.getProducts();
   }
 

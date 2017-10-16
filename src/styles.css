@@ -20,3 +20,6 @@ a {
     top: 75px;
 }
 
+input {
+    outline: none;
+}

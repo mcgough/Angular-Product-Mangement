@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { StarComponent } from './star/star.component';
@@ -11,7 +12,8 @@ import { ConvertToSpacesPipe } from './Pipes/convert-to-spaces';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   declarations: [
     CartModalComponent,

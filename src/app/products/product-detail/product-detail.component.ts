@@ -35,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
     } else {
       this.getProduct();
     }
+
   }
 
   getProduct(): void {
@@ -47,6 +48,7 @@ export class ProductDetailComponent implements OnInit {
     this.quantity = 1;  
   }
   handleAddToCart(): void {
+    if (!this.inventoryCheck()) return;
     const product = Object.assign({}, this.product, {
       quantity: this.quantity,
     });
@@ -70,5 +72,16 @@ export class ProductDetailComponent implements OnInit {
   clearModalUrl(): void {
     this.modalUrl = '';
     this.modalName = '';
+  }
+  inventoryCheck(): boolean {
+    if (this.quantity > this.product.quantity) {
+      this.onInventoryExceed();
+      return false;
+    }
+    return true;
+  }
+  onInventoryExceed(): void {
+    this.quantity = this.product.quantity;
+    alert('Order exceeds inventory');
   }
 }

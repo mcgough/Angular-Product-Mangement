@@ -29,7 +29,12 @@
     </div>
     <div class="button-container">
       <a [routerLink]="['/products', previous.productId]"><div class="previous"><span>Previous</span></div></a>
-      <a [routerLink]="['/products/' + next.productId]"><div class="next">Next</div></a>
+      <a [routerLink]="['/products', next.productId]"><div class="next">Next</div></a>
+    </div>
+    <div class="review-container">
+      <div class="review-heading">
+
+      </div>
     </div>
   </div>
   <image-modal *ngIf="modalUrl" [url]="modalUrl" [name]="modalName" (closeModal)="clearModalUrl()"></image-modal>

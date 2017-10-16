@@ -10,13 +10,14 @@ label {
   align-items: center;
   justify-content: center;
   color: rgb(249,157,28);
+  font-weight: 800;
 }
 input {
   font-weight: normal;
   margin: 0 10px;
 }
 .clear-button {
-  width: 90px;
+  width: 100px;
   height: 30px;
   background: rgba(249,157,28,0.9);
   display: flex;

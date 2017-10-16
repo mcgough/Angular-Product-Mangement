@@ -63,6 +63,9 @@ li:first-of-type {
 .cart-modal .line-item {
   font-size: .75em;
 }
+.cart-modal .line-item .product-link {
+  color: #004f5a !important;
+}
 .cart-modal .price-total {
   border-top: 1px solid;
   padding-top: 8px;

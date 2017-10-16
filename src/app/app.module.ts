@@ -16,8 +16,8 @@ import { ProductService } from './products/product.service';
     BrowserModule,
     HttpClientModule,
     ProductModule,
-    AppRoutingModule,
     SharedModule,
+    AppRoutingModule,
   ],
   declarations: [ 
     AppComponent,

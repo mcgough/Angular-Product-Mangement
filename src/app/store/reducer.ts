@@ -20,14 +20,13 @@ const initialState: IAppState = {
 };
 
 function setProducts(state, action) : IAppState {
-  const storedState = JSON.parse(localStorage.getItem('state'));
   const { products } = action;
-  let newState = assign(state, { products, filteredProducts: products});
-  // if (Object.prototype.hasOwnProperty.call(storedState, 'products')) {
-  //   newState = storedState;
-  // }
-  setLocalStorage(JSON.stringify(newState));
-  return newState;
+  const storedState = JSON.parse(localStorage.getItem('state'));
+  if (storedState && Object.prototype.hasOwnProperty.call(storedState, 'products')) {
+    storedState.cartModalFlag = false;
+    return storedState;
+  }
+  return assign(state, { products, filteredProducts: products});
 }
 
 function filterProducts(state, action) : IAppState {
@@ -49,11 +48,13 @@ function addProductToCart(state, action) : IAppState {
   const cart = state.cart.slice();
   const products = state.products.slice();
   cart.unshift(action.product);
-  return Object.assign({}, state, {
+  const newState = Object.assign({}, state, {
     cart,
     cartModalFlag: true,
     products: setNewProductQuantity(products, action.product),
-  })
+  });
+  setLocalStorage(JSON.stringify(newState));
+  return newState;
 }
 
 function removeProductFromCart(state, action) : IAppState {
@@ -62,10 +63,13 @@ function removeProductFromCart(state, action) : IAppState {
   const cart = state.cart.slice();
   const products = state.products.slice();
   removedProduct.quantity = quantity * -1;
-  return Object.assign({}, state, {
+  const newState = Object.assign({}, state, {
     cart: cart.filter(product => product.productId !== removedProduct.productId),
     products: setNewProductQuantity(products, removedProduct),
-  })
+  });
+  setLocalStorage(JSON.stringify(newState));
+  return newState;
+
 }
 
 function setCartModalFlag(state, action) : IAppState {
