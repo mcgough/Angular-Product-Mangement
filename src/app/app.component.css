@@ -1,6 +1,11 @@
 .nav-container {
   padding: 25px 0;
   background: rgba(249,157,28,0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  z-index: 100;
 }
 .nav-container ul {
   display: flex;

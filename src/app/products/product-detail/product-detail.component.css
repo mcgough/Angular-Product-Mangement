@@ -132,4 +132,10 @@ a:hover {
   .product-details {
     margin: auto;
   }
+  .product-image-container {
+    margin: auto;
+  }
+  .add-to-cart {
+    width: 90%;
+  }
 }

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+html {
     overflow-x: hidden;
 }
 
@@ -13,5 +13,10 @@ div.panel-heading {
 
 a {
     color: #000 !important;
+}
+
+.product-list, .product-detail {
+    position: relative;
+    top: 75px;
 }
 
