@@ -1,4 +1,4 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { store, submitProductReview } from '../../store';
 
 import { IReview, IProduct } from '../product';
@@ -17,6 +17,7 @@ export class ProductReviewsComponent implements OnInit {
   formModalFlag: boolean = false;
   reviewForm: IReview;
   starRating: string;
+  emptyStars: NodeListOf<Element>;
   
   get productName(): string {
     return this.product.productName;
@@ -38,8 +39,24 @@ export class ProductReviewsComponent implements OnInit {
       product: this.productId,
     })
   }
+  handleStarMouseEnter(num: number) {
+    let i = 0;
+    for (i; i <= num; i++) {
+      this.emptyStars[i].className = 'glyphicon glyphicon-star';
+    }
+  }
+  handleStarMouseLeave() {
+    let i = 0;
+    let length = this.emptyStars.length;
+    for (i; i <= length; i++) {
+      this.emptyStars[i].className = 'glyphicon glyphicon-star-empty';
+    }
+  }
   handleClick(): void {
     this.formModalFlag = true;
+    setTimeout(() => {
+      this.emptyStars = document.querySelectorAll('.glyphicon-star-empty');
+    }, 500)
   }
   handleReviewSubmit(): void {
     const review = Object.assign({}, this.reviewForm);

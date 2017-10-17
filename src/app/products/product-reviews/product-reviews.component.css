@@ -22,12 +22,23 @@
   justify-content: center;
   background: rgba(255, 255, 255, .9);
 }
+
 .form-modal-container {
   width: 600px;
   padding: 20px;
   background: #fff;
   border: 5px solid rgba(249,157,28,1);
 }
+.form-modal-container textarea {
+  width: 300px;
+  height: 200px;
+}
+.form-modal-container .glyphicon-star-empty {
+  color: rgba(249,157,28,1);
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .reviews-container {
   padding: 10px 25px 0;
   border: 2px solid rgba(249,157,28,1);

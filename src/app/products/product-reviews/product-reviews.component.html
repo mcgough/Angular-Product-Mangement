@@ -30,6 +30,13 @@
           <input type="radio" value="4" [(ngModel)]="reviewForm.starRating">
           <input type="radio" value="5" [(ngModel)]="reviewForm.starRating">
         </div>
+        <div class="star-container">
+            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(0)" (mouseleave)="handleStarMouseLeave()"></span>
+            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(1)" (mouseleave)="handleStarMouseLeave()"></span>
+            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(2)" (mouseleave)="handleStarMouseLeave()"></span>
+            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(3)" (mouseleave)="handleStarMouseLeave()"></span>
+            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(4)" (mouseleave)="handleStarMouseLeave()"></span>
+        </div>
         <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
         <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>
       </div>
