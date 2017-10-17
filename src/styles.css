@@ -20,6 +20,6 @@ a {
     top: 75px;
 }
 
-input {
+input, textarea {
     outline: none;
 }

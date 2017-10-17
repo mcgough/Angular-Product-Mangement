@@ -9,7 +9,7 @@
         "starRating": 3.2,
         "quantity": 5,
         "category": "New",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {

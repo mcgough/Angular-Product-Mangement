@@ -4,6 +4,7 @@ import {
   SET_PRODUCTS,
   FILTER_PRODUCTS,
   SET_SELECTED_PRODUCT,
+  SUBMIT_PRODUCT_REVIEW,
   ADD_PRODUCT_TO_CART,
   REMOVE_PRODUCT_FROM_CART,
   SET_CART_MODAL_FLAG,
@@ -48,13 +49,13 @@ function addProductToCart(state, action) : IAppState {
   const cart = state.cart.slice();
   const products = state.products.slice();
   cart.unshift(action.product);
-  const newState = Object.assign({}, state, {
+  const updatedState = Object.assign({}, state, {
     cart,
     cartModalFlag: true,
     products: setNewProductQuantity(products, action.product),
   });
-  setLocalStorage(JSON.stringify(newState));
-  return newState;
+  setLocalStorage(updatedState);
+  return updatedState;
 }
 
 function removeProductFromCart(state, action) : IAppState {
@@ -63,13 +64,28 @@ function removeProductFromCart(state, action) : IAppState {
   const cart = state.cart.slice();
   const products = state.products.slice();
   removedProduct.quantity = quantity * -1;
-  const newState = Object.assign({}, state, {
+  const updatedState = Object.assign({}, state, {
     cart: cart.filter(product => product.productId !== removedProduct.productId),
     products: setNewProductQuantity(products, removedProduct),
   });
-  setLocalStorage(JSON.stringify(newState));
-  return newState;
+  setLocalStorage(updatedState);
+  return updatedState;
+}
 
+function submitProductReview(state, action) : IAppState {
+  const { review } = action;
+  review.starRating = parseInt(review.starRating, 10);
+  const products = state.products.slice();
+  const updatedProducts = products.map((product) => {
+    if (product.productId === review.product) {
+      product.reviews.unshift(review);
+      product.starRating = (product.reviews.reduce((sum, review) => { sum += review.starRating; return sum }, 0)) / product.reviews.length;
+    }
+    return product;
+  });
+  const updatedState = Object.assign(state, {products: updatedProducts});
+  setLocalStorage(updatedState);
+  return updatedState;
 }
 
 function setCartModalFlag(state, action) : IAppState {
@@ -94,6 +110,8 @@ export const reducer = (state = initialState, action) => {
       return addProductToCart(state, action);
     case REMOVE_PRODUCT_FROM_CART:
       return removeProductFromCart(state, action);
+    case SUBMIT_PRODUCT_REVIEW:
+      return submitProductReview(state, action);
     case SET_CART_MODAL_FLAG:
       return setCartModalFlag(state, action);
     default:
@@ -132,7 +150,7 @@ function getSelectedPayload(products, id: number) {
 }
 
 function setLocalStorage(state) {
-  localStorage.setItem('state', state);
+  localStorage.setItem('state', JSON.stringify(state));
 }
 
 function assign(state, props) {

@@ -19,7 +19,8 @@ export interface IGetProduct {
 }
 
 export interface IReview {
+  product: number;
   date: Date;
-  rating: number;
+  starRating: number;
   body: string;
 }

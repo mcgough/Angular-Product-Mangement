@@ -1,0 +1,38 @@
+<div class="reviews-container">
+  <div class="heading">
+    <h2>Reviews</h2>
+  </div>
+  <p *ngIf="!reviews.length" style="margin: 15px 0 25px;">Be the first to write a review for the {{ productName }}</p>
+  <div>
+    <div class="add-review" (click)="handleClick()">Add A Review</div>
+  </div>
+  <div class="reviews" *ngIf="reviews.length">
+    <div *ngFor="let review of reviews" class="review">
+      <div class="review-details">
+        <pm-star [rating]="review.starRating"></pm-star>
+        <p class="date">{{ review.date | date }}</p>
+      </div>
+      <div class="review-body">
+        <p>{{ review.body }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-modal-overlay" *ngIf="formModalFlag">
+  <div class="form-modal-container">
+    <div class="content">
+      <h4>Submit Review for {{ productName }}</h4>
+      <div>
+        <div>
+          <input type="radio" value="1" [(ngModel)]="reviewForm.starRating">
+          <input type="radio" value="2" [(ngModel)]="reviewForm.starRating">
+          <input type="radio" value="3" [(ngModel)]="reviewForm.starRating">
+          <input type="radio" value="4" [(ngModel)]="reviewForm.starRating">
+          <input type="radio" value="5" [(ngModel)]="reviewForm.starRating">
+        </div>
+        <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
+        <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>
+      </div>
+    </div>
+  </div>
+</div>
