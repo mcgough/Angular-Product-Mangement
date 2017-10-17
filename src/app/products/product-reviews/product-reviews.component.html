@@ -1,11 +1,13 @@
 <div class="reviews-container">
-  <div class="heading">
-    <h2>Reviews</h2>
+  <div style="display: flex; justify-content: space-between">
+    <div class="heading">
+      <h2>Reviews</h2>
+    </div>
+    <div>
+      <div class="add-review" (click)="handleClick()">Add A Review</div>
+    </div>
   </div>
   <p *ngIf="!reviews.length" style="margin: 15px 0 25px;">Be the first to write a review for the {{ productName }}</p>
-  <div>
-    <div class="add-review" (click)="handleClick()">Add A Review</div>
-  </div>
   <div class="reviews" *ngIf="reviews.length">
     <div *ngFor="let review of reviews" class="review">
       <div class="review-details">
@@ -23,19 +25,12 @@
     <div class="content">
       <h4>Submit Review for {{ productName }}</h4>
       <div>
-        <div>
-          <input type="radio" value="1" [(ngModel)]="reviewForm.starRating">
-          <input type="radio" value="2" [(ngModel)]="reviewForm.starRating">
-          <input type="radio" value="3" [(ngModel)]="reviewForm.starRating">
-          <input type="radio" value="4" [(ngModel)]="reviewForm.starRating">
-          <input type="radio" value="5" [(ngModel)]="reviewForm.starRating">
-        </div>
         <div class="star-container">
-            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(0)" (mouseleave)="handleStarMouseLeave()"></span>
-            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(1)" (mouseleave)="handleStarMouseLeave()"></span>
-            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(2)" (mouseleave)="handleStarMouseLeave()"></span>
-            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(3)" (mouseleave)="handleStarMouseLeave()"></span>
-            <span class="glyphicon glyphicon-star-empty" (mouseenter)="handleStarMouseEnter(4)" (mouseleave)="handleStarMouseLeave()"></span>
+          <span class="glyphicon glyphicon-star whole"></span>
+          <span class="glyphicon glyphicon-star" (click)="handleStarClick(2)" (mouseenter)="handleStarMouseEnter(2)" (mouseleave)="handleStarMouseLeave()"></span>
+          <span class="glyphicon glyphicon-star" (click)="handleStarClick(3)" (mouseenter)="handleStarMouseEnter(3)" (mouseleave)="handleStarMouseLeave()"></span>
+          <span class="glyphicon glyphicon-star" (click)="handleStarClick(4)" (mouseenter)="handleStarMouseEnter(4)" (mouseleave)="handleStarMouseLeave()"></span>
+          <span class="glyphicon glyphicon-star" (click)="handleStarClick(5)" (mouseenter)="handleStarMouseEnter(5)" (mouseleave)="handleStarMouseLeave()"></span>
         </div>
         <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
         <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>

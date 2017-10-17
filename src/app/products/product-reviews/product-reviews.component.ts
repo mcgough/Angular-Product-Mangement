@@ -16,7 +16,6 @@ export class ProductReviewsComponent implements OnInit {
   @Input() product: IProduct; 
   formModalFlag: boolean = false;
   reviewForm: IReview;
-  starRating: string;
   emptyStars: NodeListOf<Element>;
   
   get productName(): string {
@@ -35,28 +34,37 @@ export class ProductReviewsComponent implements OnInit {
     this.reviewForm = Object.assign({}, this.reviewForm, {
       date: new Date(),
       body: '',
-      starRating: '1',
+      starRating: 1,
       product: this.productId,
     })
   }
-  handleStarMouseEnter(num: number) {
-    let i = 0;
-    for (i; i <= num; i++) {
-      this.emptyStars[i].className = 'glyphicon glyphicon-star';
+  handleStarClick(num: number): void {
+    this.reviewForm = Object.assign({}, this.reviewForm, {
+      starRating: num,
+    });
+  }
+  handleStarMouseEnter(num: number): void {
+    this.reviewForm = Object.assign({}, this.reviewForm, {
+      starRating: 1,
+    });
+    for (let i = 0; i < num; i++) {
+      this.emptyStars[i].className = 'glyphicon glyphicon-star whole';
     }
   }
-  handleStarMouseLeave() {
-    let i = 0;
-    let length = this.emptyStars.length;
-    for (i; i <= length; i++) {
-      this.emptyStars[i].className = 'glyphicon glyphicon-star-empty';
+  handleStarMouseLeave(): void {
+    for (let i = 0; i <= this.emptyStars.length; i++) {
+      if (i >= this.reviewForm.starRating) {
+        if (this.emptyStars[i] !== undefined) {
+          this.emptyStars[i].className = 'glyphicon glyphicon-star';
+        }
+      }
     }
   }
   handleClick(): void {
     this.formModalFlag = true;
     setTimeout(() => {
-      this.emptyStars = document.querySelectorAll('.glyphicon-star-empty');
-    }, 500)
+      this.emptyStars = document.querySelectorAll('.form-modal-container .glyphicon');
+    }, 100)
   }
   handleReviewSubmit(): void {
     const review = Object.assign({}, this.reviewForm);

@@ -22,7 +22,7 @@
         "starRating": 4.2,
         "quantity": 2,
         "category": "New",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -35,7 +35,7 @@
         "starRating": 4.8,
         "quantity": 8,
         "category": "New",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
@@ -48,7 +48,7 @@
         "starRating": 3.7,
         "quantity": 0,
         "category": "New",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {
@@ -61,7 +61,7 @@
         "starRating": 4.6,
         "quantity": 0,
         "category": "New",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     },
     {
@@ -74,7 +74,7 @@
         "starRating": 3.2,
         "quantity": 5,
         "category": "Old",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
@@ -87,7 +87,7 @@
         "starRating": 4.2,
         "quantity": 1,
         "category": "Old",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -100,7 +100,7 @@
         "starRating": 4.8,
         "quantity": 3,
         "category": "Old",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
@@ -113,7 +113,7 @@
         "starRating": 3.7,
         "quantity": 13,
         "category": "Old",
-        "reviews": [],
+        "reviews": [{"starRating": 3, "body": "Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.", "date": "Mon Oct 16 2017 13:04:00 GMT-0700 (Pacific Daylight Time)"}],
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {

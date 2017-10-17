@@ -74,7 +74,6 @@ function removeProductFromCart(state, action) : IAppState {
 
 function submitProductReview(state, action) : IAppState {
   const { review } = action;
-  review.starRating = parseInt(review.starRating, 10);
   const products = state.products.slice();
   const updatedProducts = products.map((product) => {
     if (product.productId === review.product) {
@@ -83,7 +82,7 @@ function submitProductReview(state, action) : IAppState {
     }
     return product;
   });
-  const updatedState = Object.assign(state, {products: updatedProducts});
+  const updatedState = Object.assign(state, { products: updatedProducts });
   setLocalStorage(updatedState);
   return updatedState;
 }
