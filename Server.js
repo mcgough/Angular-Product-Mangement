@@ -17,8 +17,12 @@ const path = require('path');
 
 app.use(express.static(__dirname + '/dist'));
 
-app.get('/*', (req,res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-app.listen(process.env.Port || 8080);
+const port = process.env.PORT || 8080;
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port, () => console.log('App Running'));
