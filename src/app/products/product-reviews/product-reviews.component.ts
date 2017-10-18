@@ -73,6 +73,9 @@ export class ProductReviewsComponent implements OnInit {
       this.formModalFlag = false;
       this.setReviewForm();
     }
-  } 
+  }
+  handleReviewCancel(): void {
+    this.formModalFlag = false;
+  }
 }
 

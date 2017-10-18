@@ -1,5 +1,5 @@
 <div class="reviews-container">
-  <div style="display: flex; justify-content: space-between">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
     <div class="heading">
       <h2>Reviews</h2>
     </div>
@@ -34,6 +34,7 @@
         </div>
         <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
         <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>
+        <div class="submit-review cancel" (click)="handleReviewCancel()">Cancel</div>
       </div>
     </div>
   </div>

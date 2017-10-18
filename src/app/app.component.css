@@ -21,6 +21,9 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
+.nav-container li a.active {
+  text-decoration: underline;
+}
 
 .nav-container a {
   color: #004f5a !important;

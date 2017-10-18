@@ -8,8 +8,8 @@ import { ProductService } from './products/product.service';
     <nav>
       <div class="nav-container">
         <ul>
-          <li><a [routerLink]="['/']">Home</a></li>
-          <li><a [routerLink]="['/products']">Products</a></li>
+          <li><a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li><a [routerLink]="['/products']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Products</a></li>
         </ul>
         <pm-cart-modal></pm-cart-modal>
       </div>
