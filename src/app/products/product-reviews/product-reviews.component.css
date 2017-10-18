@@ -10,45 +10,30 @@
   text-align: left;
 }
 
-.form-modal-overlay {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  bottom: 0px;
-  right: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, .9);
-}
-
-.form-modal-container {
-  width: 600px;
-  padding: 20px;
-  background: #fff;
-  border: 5px solid rgba(249,157,28,1);
-}
-.form-modal-container textarea {
+textarea {
   width: 300px;
   height: 200px;
+  margin-bottom: 5px;
 }
-.form-modal-container .glyphicon-star {
+.star-container.review-modal {
+  margin-bottom: 5px;
+}
+.review-modal .glyphicon-star {
   color: #bdc3c7;
   font-size: 30px;
   cursor: pointer;
 }
-.form-modal-container .glyphicon-star.whole {
+.review-modal .glyphicon-star.whole {
   position: relative;
 }
-.form-modal-container .glyphicon-star.whole:before {
+.review-modal .glyphicon-star.whole:before {
   position: relative;
   z-index: 9;
   width: 100%;
   display: block;
   overflow: hidden;
 }
-.form-modal-container .glyphicon-star.whole:after {
+.review-modal .glyphicon-star.whole:after {
   content: '\e006';
   position: absolute;
   z-index: 10;

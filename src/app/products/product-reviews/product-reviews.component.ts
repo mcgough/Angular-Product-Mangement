@@ -63,7 +63,7 @@ export class ProductReviewsComponent implements OnInit {
   handleClick(): void {
     this.formModalFlag = true;
     setTimeout(() => {
-      this.emptyStars = document.querySelectorAll('.form-modal-container .glyphicon');
+      this.emptyStars = document.querySelectorAll('.modal-container .glyphicon');
     }, 100)
   }
   handleReviewSubmit(): void {
@@ -74,7 +74,7 @@ export class ProductReviewsComponent implements OnInit {
       this.setReviewForm();
     }
   }
-  handleReviewCancel(): void {
+  closeModal(): void {
     this.formModalFlag = false;
   }
 }

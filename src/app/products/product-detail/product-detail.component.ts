@@ -17,7 +17,8 @@ export class ProductDetailComponent implements OnInit {
   previous: IProduct;
   modalUrl: string = '';
   modalName: string = '';
-  
+  isModalOpen: boolean = false;
+
   constructor (private router: Router, private route: ActivatedRoute) {
     router.events
       .filter(event => event instanceof NavigationEnd)
@@ -68,10 +69,12 @@ export class ProductDetailComponent implements OnInit {
   handleImageClick(url: string, name: string): void {
     this.modalUrl = url;
     this.modalName = name;
+    this.isModalOpen = true;
   }
-  clearModalUrl(): void {
+  closeModal(): void {
     this.modalUrl = '';
     this.modalName = '';
+    this.isModalOpen = false;
   }
   inventoryCheck(): boolean {
     if (this.quantity > this.product.quantity) {

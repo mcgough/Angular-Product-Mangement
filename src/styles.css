@@ -23,3 +23,15 @@ a {
 input, textarea {
     outline: none;
 }
+
+
+.modal-container .content img {
+    width: 40vw;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 604px) {
+    .modal-container .content img {
+        width: auto;
+    }
+}

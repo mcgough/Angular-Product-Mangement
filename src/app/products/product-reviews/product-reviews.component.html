@@ -20,22 +20,18 @@
     </div>
   </div>
 </div>
-<div class="form-modal-overlay" *ngIf="formModalFlag">
-  <div class="form-modal-container">
-    <div class="content">
-      <h4>Submit Review for {{ productName }}</h4>
-      <div>
-        <div class="star-container">
-          <span class="glyphicon glyphicon-star whole"></span>
-          <span class="glyphicon glyphicon-star" (click)="handleStarClick(2)" (mouseenter)="handleStarMouseEnter(2)" (mouseleave)="handleStarMouseLeave()"></span>
-          <span class="glyphicon glyphicon-star" (click)="handleStarClick(3)" (mouseenter)="handleStarMouseEnter(3)" (mouseleave)="handleStarMouseLeave()"></span>
-          <span class="glyphicon glyphicon-star" (click)="handleStarClick(4)" (mouseenter)="handleStarMouseEnter(4)" (mouseleave)="handleStarMouseLeave()"></span>
-          <span class="glyphicon glyphicon-star" (click)="handleStarClick(5)" (mouseenter)="handleStarMouseEnter(5)" (mouseleave)="handleStarMouseLeave()"></span>
-        </div>
-        <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
-        <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>
-        <div class="submit-review cancel" (click)="handleReviewCancel()">Cancel</div>
-      </div>
+<modal [visible]="formModalFlag" (closeModal)="closeModal()">
+  <span modal-title>Submit Review for {{ productName }}</span>
+  <div modal-body>
+    <div class="star-container review-modal">
+      <span class="glyphicon glyphicon-star whole"></span>
+      <span class="glyphicon glyphicon-star" (click)="handleStarClick(2)" (mouseenter)="handleStarMouseEnter(2)" (mouseleave)="handleStarMouseLeave()"></span>
+      <span class="glyphicon glyphicon-star" (click)="handleStarClick(3)" (mouseenter)="handleStarMouseEnter(3)" (mouseleave)="handleStarMouseLeave()"></span>
+      <span class="glyphicon glyphicon-star" (click)="handleStarClick(4)" (mouseenter)="handleStarMouseEnter(4)" (mouseleave)="handleStarMouseLeave()"></span>
+      <span class="glyphicon glyphicon-star" (click)="handleStarClick(5)" (mouseenter)="handleStarMouseEnter(5)" (mouseleave)="handleStarMouseLeave()"></span>
     </div>
+    <textarea placeholder="What do you think?" [(ngModel)]="reviewForm.body" name="body"></textarea>
+    <div class="submit-review" (click)="handleReviewSubmit()">Submit Review</div>    
   </div>
-</div>
+</modal>
+

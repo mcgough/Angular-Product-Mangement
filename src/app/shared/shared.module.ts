@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { StarComponent } from './star/star.component';
 import { PageTitleComponent } from './page-title/page-title.component';
-import { ImageModalComponent } from './image-modal/image-modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 import { ConvertToSpacesPipe } from './Pipes/convert-to-spaces';
 
@@ -19,7 +19,7 @@ import { ConvertToSpacesPipe } from './Pipes/convert-to-spaces';
     CartModalComponent,
     PageTitleComponent,
     StarComponent,
-    ImageModalComponent,
+    ModalComponent,
     ConvertToSpacesPipe,
     CartModalComponent,
   ],
@@ -27,7 +27,7 @@ import { ConvertToSpacesPipe } from './Pipes/convert-to-spaces';
     CartModalComponent,
     PageTitleComponent,
     StarComponent,
-    ImageModalComponent,
+    ModalComponent,
     CommonModule,
     FormsModule,
     ConvertToSpacesPipe,

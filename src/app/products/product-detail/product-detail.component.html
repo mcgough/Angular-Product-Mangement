@@ -33,5 +33,12 @@
     </div>
     <pm-product-reviews [reviews]="product.reviews" [product]="product"></pm-product-reviews>
   </div>
-  <image-modal *ngIf="modalUrl" [url]="modalUrl" [name]="modalName" (closeModal)="clearModalUrl()"></image-modal>
+  <modal [visible]="isModalOpen" (closeModal)="closeModal()">
+    <span modal-title>
+      {{ modalName }}
+    </span>
+    <div modal-body>
+      <img modal-body [src]="modalUrl" />
+    </div>
+  </modal>
 </div>
