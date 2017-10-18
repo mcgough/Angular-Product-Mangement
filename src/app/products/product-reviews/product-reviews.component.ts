@@ -76,6 +76,8 @@ export class ProductReviewsComponent implements OnInit {
   }
   closeModal(): void {
     this.formModalFlag = false;
+    this.setReviewForm();
+    this.handleStarMouseLeave();
   }
 }
 

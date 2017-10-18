@@ -7,7 +7,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
       <div class="modal-overlay" *ngIf="visible">
         <div class="modal-container">
           <div class="close-modal" (click)="close()">
-            <h3>X</h3>
+            <h3>&times;</h3>
           </div>
           <div class="content">
             <div>
