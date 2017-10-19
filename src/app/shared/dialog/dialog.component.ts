@@ -6,7 +6,7 @@ import { IDialog } from './IDialog';
 @Component({
   selector: 'pm-dialog',
   template: 
-    ` <div>
+    ` 
       <div [@fadeInOut]="type" class="dialog-container" [ngClass]="[type ? type : '']">
         <div class="content">
           <p>{{ message }}</p>
