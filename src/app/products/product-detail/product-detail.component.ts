@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { store, setSelectedProduct, addProductToCart } from '../../store';
+import { store, setSelectedProduct, addProductToCart, setDialog } from '../../store';
 import 'rxjs/add/operator/filter';
 
 import { IProduct, IGetProduct } from '../product';
@@ -55,6 +55,10 @@ export class ProductDetailComponent implements OnInit {
     });
     this.quantity = 1;
     store.dispatch(addProductToCart(product));
+    store.dispatch(setDialog({
+      type: 'success',
+      message: `${this.product.productName} added to cart`,
+    }))
   }
   handleAddQuantityClick(): void {
     if (this.quantity < this.product.quantity) {
@@ -85,6 +89,9 @@ export class ProductDetailComponent implements OnInit {
   }
   onInventoryExceed(): void {
     this.quantity = this.product.quantity;
-    alert('Order exceeds inventory');
+    store.dispatch(setDialog({
+      type: 'error',
+      message: 'Not enough inventory',
+    }));
   }
 }

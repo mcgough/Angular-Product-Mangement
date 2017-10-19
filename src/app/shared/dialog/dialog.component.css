@@ -1,0 +1,25 @@
+.dialog-container {
+  position: fixed;
+  top: 15%;
+  left: 10%;
+  padding: 25px 50px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.dialog-container.success {
+  opacity: 1;
+  background: rgba(75,181,67,.9);
+}
+.dialog-container.error {
+  opacity: 1;
+  background: rgba(204,0,0,.9);
+}
+
+.dialog-container p {
+  margin: 0;
+  color: #fff;
+  font-size: 1.25em;
+  letter-spacing: 1px;
+}

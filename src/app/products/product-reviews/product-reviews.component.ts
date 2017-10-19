@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { store, submitProductReview } from '../../store';
+import { store, submitProductReview, setDialog } from '../../store';
 
 import { IReview, IProduct } from '../product';
 
@@ -70,8 +70,18 @@ export class ProductReviewsComponent implements OnInit {
     const review = Object.assign({}, this.reviewForm);
     if (review.body !== '') {
       store.dispatch(submitProductReview(review));
+      store.dispatch(setDialog({
+        type: 'success',
+        message: 'Your review has been added',
+      }))
       this.formModalFlag = false;
       this.setReviewForm();
+      this.handleStarMouseLeave();
+    } else {
+      store.dispatch(setDialog({
+        type: 'error',
+        message: 'You must have something written in the body',
+      }))
     }
   }
   closeModal(): void {

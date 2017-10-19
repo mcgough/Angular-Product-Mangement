@@ -1,5 +1,7 @@
 import { IProduct } from '../products/product';
+import { IDialog } from '../shared/dialog/IDialog';
 import { IAppState } from './IAppState';
+
 import {
   SET_PRODUCTS,
   FILTER_PRODUCTS,
@@ -8,6 +10,8 @@ import {
   ADD_PRODUCT_TO_CART,
   REMOVE_PRODUCT_FROM_CART,
   SET_CART_MODAL_FLAG,
+  SET_DIALOG,
+  CLEAR_DIALOG,
 } from './actions';
 
 const initialState: IAppState = {
@@ -18,6 +22,7 @@ const initialState: IAppState = {
   previous: null,
   cart: [],
   cartModalFlag: false,
+  dialog: { type: null, message: null },
 };
 
 function setProducts(state, action) : IAppState {
@@ -97,6 +102,18 @@ function setNewQuantity(state, action) : IAppState {
   return state;
 }
 
+function setDialog(state, action) : IAppState {
+  return Object.assign({}, state, {
+    dialog: action.message,
+  })
+}
+
+function clearDialog(state, action) : IAppState {
+  return Object.assign({}, state, {
+    dialog: { type: null, message: null },
+  })
+}
+
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_PRODUCTS:
@@ -113,6 +130,10 @@ export const reducer = (state = initialState, action) => {
       return submitProductReview(state, action);
     case SET_CART_MODAL_FLAG:
       return setCartModalFlag(state, action);
+    case SET_DIALOG:
+      return setDialog(state, action);
+    case CLEAR_DIALOG:
+      return clearDialog(state, action);
     default:
       return state;
   } 

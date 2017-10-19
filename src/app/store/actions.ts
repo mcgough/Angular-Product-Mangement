@@ -1,4 +1,5 @@
 import { IProduct } from '../products/product';
+import { IDialog } from '../shared/dialog/IDialog';
 
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
@@ -7,6 +8,8 @@ export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const SET_CART_MODAL_FLAG = 'SET_CART_MODAL_FLAG';
 export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 export const SUBMIT_PRODUCT_REVIEW = 'SUBMIT_PRODUCT_REVIEW';
+export const SET_DIALOG = 'SET_DIALOG';
+export const CLEAR_DIALOG = 'CLEAR_DIALOG';
 
 export const setProducts = (products: IProduct[]) => {
   return { 
@@ -54,5 +57,18 @@ export const setCartModalFlag = (flag: boolean) => {
   return {
     type: SET_CART_MODAL_FLAG,
     flag,
+  }
+}
+
+export const setDialog = (message: IDialog) => {
+  return {
+    type: SET_DIALOG,
+    message,
+  }
+}
+
+export const clearDialog = () => {
+  return {
+    type: CLEAR_DIALOG,
   }
 }

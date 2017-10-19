@@ -1,4 +1,5 @@
 import { IProduct } from '../products/product';
+import { IDialog } from '../shared/dialog/IDialog';
 
 export interface IAppState {
   products: IProduct[];
@@ -8,4 +9,5 @@ export interface IAppState {
   previous: IProduct;
   cart: IProduct[];
   cartModalFlag: boolean;
+  dialog: IDialog;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../products/product';
-import { store, setCartModalFlag, removeProductFromCart } from '../../store';
+import { store, setCartModalFlag, removeProductFromCart, setDialog } from '../../store';
 import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -53,6 +53,10 @@ export class CartModalComponent implements OnInit {
   }
   removeProduct(product: IProduct): void {
     store.dispatch(removeProductFromCart(product));
+    store.dispatch(setDialog({
+      type: 'error',
+      message: `${product.productName} removed from cart`,
+    }))
   }
   openModal(): void {
     this.isOpen ? store.dispatch(setCartModalFlag(false)) : store.dispatch(setCartModalFlag(true));

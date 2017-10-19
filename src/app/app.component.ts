@@ -16,6 +16,7 @@ import { ProductService } from './products/product.service';
     </nav>
     <div>
       <router-outlet></router-outlet>
+      <pm-dialog></pm-dialog>
     </div>
   `,
   styleUrls: [ './app.component.css' ],
