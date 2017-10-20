@@ -30,6 +30,7 @@ function setProducts(state, action) : IAppState {
   const storedState = JSON.parse(localStorage.getItem('state'));
   if (storedState && Object.prototype.hasOwnProperty.call(storedState, 'products')) {
     storedState.cartModalFlag = false;
+    storedState.dialogs = [];
     return storedState;
   }
   return assign(state, { products, filteredProducts: products});

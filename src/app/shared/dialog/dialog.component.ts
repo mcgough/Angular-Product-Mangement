@@ -1,4 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
+import { TimeOutDirective } from '../Directives/time-out.directive';
 import { store, clearDialog } from '../../store';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { IDialog } from './IDialog';
@@ -8,7 +9,7 @@ import { IDialog } from './IDialog';
   template: 
     ` 
       <div class="dialogs-container">
-        <div class="dialog" *ngFor="let dialog of dialogs" [className]="dialog ? 'dialog ' + dialog.type : 'dialog'">
+        <div pmTimeOut *ngFor="let dialog of dialogs" [className]="dialog ? 'dialog ' + dialog.type : 'dialog'">
           <div class="content">
             <p>{{ dialog.message }}</p>
           </div>
@@ -47,11 +48,4 @@ export class DialogComponent implements OnInit {
     const appState = store.getState();
     this.dialogs = appState.dialogs;
   }
-
-  closeDialog(): void {
-    setTimeout(() => {
-      store.dispatch(clearDialog());
-    }, 3500);
-  }
-
 }

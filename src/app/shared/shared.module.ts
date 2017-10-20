@@ -11,6 +11,7 @@ import { ModalComponent } from './modal/modal.component';
 
 import { ConvertToSpacesPipe } from './Pipes/convert-to-spaces';
 import { DialogComponent } from './dialog/dialog.component';
+import { TimeOutDirective } from './Directives/time-out.directive';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { DialogComponent } from './dialog/dialog.component';
     ConvertToSpacesPipe,
     CartModalComponent,
     DialogComponent,
+    TimeOutDirective,
   ],
   exports: [
     CartModalComponent,
