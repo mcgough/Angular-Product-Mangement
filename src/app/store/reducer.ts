@@ -22,7 +22,7 @@ const initialState: IAppState = {
   previous: null,
   cart: [],
   cartModalFlag: false,
-  dialog: { type: null, message: null },
+  dialogs: [],
 };
 
 function setProducts(state, action) : IAppState {
@@ -103,14 +103,16 @@ function setNewQuantity(state, action) : IAppState {
 }
 
 function setDialog(state, action) : IAppState {
+  const dialogs = state.dialogs.slice();
+  dialogs.unshift(action.message);
   return Object.assign({}, state, {
-    dialog: action.message,
+    dialogs: dialogs,
   })
 }
 
 function clearDialog(state, action) : IAppState {
   return Object.assign({}, state, {
-    dialog: { type: null, message: null },
+    dialogs: [],
   })
 }
 

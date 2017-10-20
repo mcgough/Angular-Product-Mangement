@@ -7,9 +7,11 @@ import { IDialog } from './IDialog';
   selector: 'pm-dialog',
   template: 
     ` 
-      <div [@fadeInOut]="type" class="dialog-container" [ngClass]="[type ? type : '']">
-        <div class="content">
-          <p>{{ message }}</p>
+      <div class="dialogs-container">
+        <div class="dialog" *ngFor="let dialog of dialogs" [className]="dialog ? 'dialog ' + dialog.type : 'dialog'">
+          <div class="content">
+            <p>{{ dialog.message }}</p>
+          </div>
         </div>
       </div>
     `,
@@ -29,12 +31,10 @@ import { IDialog } from './IDialog';
     ])
   ]
 })
-export class DialogComponent implements OnInit, DoCheck {
+export class DialogComponent implements OnInit {
 
   constructor() { }
 
-  message: string;
-  type: string;
   dialogs: IDialog[];
 
   ngOnInit(): void {
@@ -42,21 +42,13 @@ export class DialogComponent implements OnInit, DoCheck {
       this.updateDialogState();
     });
   }
-  ngDoCheck(): void {
-    if (this.message) {
-      this.closeDialog();
-    }
-  }
 
   updateDialogState(): void {
     const appState = store.getState();
-    const { message, type } = appState.dialog; 
-    this.message = message;
-    this.type = type;
+    this.dialogs = appState.dialogs;
   }
 
   closeDialog(): void {
-    setTimeout(() => { this.type = null; }, 3000);
     setTimeout(() => {
       store.dispatch(clearDialog());
     }, 3500);

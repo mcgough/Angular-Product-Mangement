@@ -9,5 +9,5 @@ export interface IAppState {
   previous: IProduct;
   cart: IProduct[];
   cartModalFlag: boolean;
-  dialog: IDialog;
+  dialogs: IDialog[];
 }
