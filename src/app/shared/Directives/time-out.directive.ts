@@ -9,6 +9,9 @@ export class TimeOutDirective {
     setTimeout(() => {
       el.nativeElement.style.opacity = 0;
     }, 2000);
+    setTimeout(() => {
+      el.nativeElement.remove();
+    }, 2500);
   }
 
 }
