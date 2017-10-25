@@ -6,12 +6,19 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class TimeOutDirective {
   
   constructor(el: ElementRef) {
+    this.opacityToZero(el);
+    this.removeElement(el);
+  }
+
+  opacityToZero(elem: ElementRef) {
     setTimeout(() => {
-      el.nativeElement.style.opacity = 0;
-    }, 2000);
+      elem.nativeElement.style.opacity = 0;
+    }, 2000)
+  }
+  removeElement(elem: ElementRef) {
     setTimeout(() => {
-      el.nativeElement.remove();
-    }, 2500);
+      elem.nativeElement.remove();
+    }, 2500)
   }
 
 }
